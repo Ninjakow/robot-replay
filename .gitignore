@@ -102,3 +102,6 @@ ENV/
 
 .vscode/
 .DS_Store
+
+# flake8
+.flake8
