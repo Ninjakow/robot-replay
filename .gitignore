@@ -105,3 +105,6 @@ ENV/
 
 # flake8
 .flake8
+
+# ignore logs
+/logs

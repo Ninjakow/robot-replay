@@ -19,7 +19,7 @@ if args.camera is None:
     args.camera = ["http://10.47.74.36:1181/stream.mjpg",
                    "http://10.47.74.36:1182/stream.mjpg"]  # [0,1] testing
 
-current_time = time.strftime("%H%M %d-%m-%Y")
+current_time = time.strftime("%H-%M-%S %d-%m-%y")
 streams = [Recorder(args.directory + "cam" + str(num) + "-" + current_time +
                     ".mp4", stream, int(max(args.refresh_rate, 1)))
            for num, stream in enumerate(args.camera, start=1)]
@@ -33,7 +33,7 @@ if __name__ == "__main__":
         for stream in streams:
             stream.record()
 
-        logger.log
+        logger.log()
 
         elapsed = time.monotonic() - start
         if 1/args.refresh_rate - elapsed > 0:
